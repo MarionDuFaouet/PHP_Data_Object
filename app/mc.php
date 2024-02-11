@@ -3,16 +3,16 @@
 
 <?php
 
-new PDO ("mysql:host=".$_ENV['DB_HOST'].";dbname=".$_ENV['DB_NAME'], $password);
+//new PDO ("mysql:host=".$_ENV['DB_HOST'].";dbname=".$_ENV['DB_NAME'], $login, $password);
+new PDO ("mysql:host=".$_ENV['DB_HOST'].";dbname=".$_ENV['DB_NAME']."loginname=".$_ENV['DB_USER']."password=".$_ENV['DB_PASSWORD']);
 
-// $conn = new PDO ("mysql:host=$servername;dbname=abc",$username, $password);
+// Chargement des variables d'environnement
+use Dotenv\Dotenv;
+require __DIR__.'/vendor/autoload.php';
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
-
-// $conn = new PDO ("mysql:host=".$_ENV['DB_HOST'].";dbname=".$_ENV['DB_NAME'], $password);
-
-// new PDO ("mysql:host=$servername;$dbname",$username, $password);
-//$conn = new PDO ("mysql:host=localhost".$_ENV['DB_HOST'].";dbname=abc".$_ENV['DB_NAME'], $password);
-
+require ('app/mc.php');
 
 
 ?>
