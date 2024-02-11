@@ -10,19 +10,21 @@
 <body>
 
     <h1>Base de données ABC - Ajout d'un produit</h1>
-<!-- quelle adresse dans le action? -->
-    <form action="form-produit.php" method="post">
-        <div>
-            <label for="produit">Description</label><br>
-            <input type="text" id="produit" name="produit" placeholder="Produit">
-        </div><br>
-        <div>
-            <label for="prix">Prix</label><br>
-            <input type="text" id="prix" name="prix" placeholder="Prix unitaire">
-        </div><br>
 
-        <input type="submit" name="submit" value="Enregistrer"><br>
-    </form>
+
+
+    <?php
+
+    require_once ('form.php');
+    // appel de la classe form.php pour créer le formulaire
+    $formulaireProduit = new FormulaireProduit();
+
+    //contrôle de saisie
+    
+
+    //
+
+    ?>
 
 
     <!-- OBJECTIF PEDAGOGIQUE
@@ -35,9 +37,6 @@
 ✎ Etape 1 : fichier 'form-produit.php' :
 • création du formulaire de saisie à l'aide la classe (fonction) Form,
 • contrôle de saisie (champs non vides, valeur numérique pour le prix, …),
-if
-elseif
-else
 • retour des erreurs à l'utilisateur avec maintien du formulaire (en son état de saisie)
 en cas d'erreur(s),
 • passage de l'activité à 'mc.php' quand le contenu du formulaire est correct -->
